@@ -162,9 +162,13 @@ namespace Microsoft.Build.Utilities
                 // Assign our exclude paths to our lookup
                 foreach (ITaskItem excludePath in excludedInputPaths)
                 {
-                    string fullexcludePath = FileUtilities.EnsureNoTrailingSlash(FileUtilities.NormalizePath(excludePath.ItemSpec)).ToUpperInvariant();
-                    _excludedInputPaths.Add(fullexcludePath);
+                    if (!String.IsNullOrWhiteSpace(excludePath.ItemSpec))
+                    {
+                        string fullexcludePath = FileUtilities.EnsureNoTrailingSlash(FileUtilities.NormalizePath(excludePath.ItemSpec)).ToUpperInvariant();
+                        _excludedInputPaths.Add(fullexcludePath);
+                    }
                 }
+                    
             }
 
             DependencyTable = new Dictionary<string, Dictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
