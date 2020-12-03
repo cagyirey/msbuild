@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+.ionide
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -222,3 +223,4 @@ stage1/
 
 # ETL traces    
 *.etl.zip
+

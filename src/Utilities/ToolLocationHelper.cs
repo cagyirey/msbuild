@@ -1615,7 +1615,7 @@ namespace Microsoft.Build.Utilities
         {
             get
             {
-                return Environment.GetFolderPath(Environment.SpecialFolder.System);
+                return EnvironmentUtilities.GetFolderPath(Environment.SpecialFolder.System);
             }
         }
 
